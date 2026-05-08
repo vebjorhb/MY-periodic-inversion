@@ -1,0 +1,164 @@
+
+DFTK Version      0.7.20
+Julia Version     1.12.4
+libxc Version     7.0.0
+FFTW.jl provider  fftw v3.3.10
+
+BLAS.get_config()
+  LinearAlgebra.BLAS.LBTConfig
+  Libraries: 
+  └ [ILP64] libopenblas64_.so
+
+MPI.versioninfo()
+  MPIPreferences:
+    binary:  MPICH_jll
+    abi:     MPICH
+  
+  Package versions
+    MPI.jl:             0.20.23
+    MPIPreferences.jl:  0.1.11
+    MPICH_jll:          4.3.2+0
+  
+  Library information:
+    libmpi:  /data/vebak3345/.julia/artifacts/117d9048128625bb3418b0b4cca48739c5d28740/lib/libmpi.so
+    libmpi dlpath:  /data/vebak3345/.julia/artifacts/117d9048128625bb3418b0b4cca48739c5d28740/lib/libmpi.so
+    MPI version:  4.1.0
+    Library version:  
+      MPICH Version:      4.3.1
+      MPICH Release date: Fri Jun 20 09:24:41 AM CDT 2025
+      MPICH ABI:          17:1:5
+      MPICH Device:       ch3:nemesis
+      MPICH configure:    --build=x86_64-linux-musl --disable-dependency-tracking --disable-doc --enable-fast=ndebug,O3 --enable-static=no --host=x86_64-linux-gnu --prefix=/workspace/destdir --with-device=ch3 --with-hwloc=/workspace/destdir
+      MPICH CC:           cc     -DNDEBUG -DNVALGRIND -O3
+      MPICH CXX:          c++   -DNDEBUG -DNVALGRIND -O3
+      MPICH F77:          gfortran   -O3
+      MPICH FC:           gfortran   -O3
+      MPICH features:     
+      
+    MPI launcher: /data/vebak3345/.julia/artifacts/117d9048128625bb3418b0b4cca48739c5d28740/bin/mpiexec
+    MPI launcher path: /data/vebak3345/.julia/artifacts/117d9048128625bb3418b0b4cca48739c5d28740/bin/mpiexec
+  
+
+
+PlaneWaveBasis discretization:
+    architecture         : DFTK.CPU()
+    num. mpi processes   : 1
+    num. julia threads   : 1
+    num. DFTK  threads   : 1
+    num. blas  threads   : 1
+    num. fft   threads   : 1
+
+    Ecut                 : 45.0 Ha
+    fft_size             : (64, 64, 64), 262144 total points
+    kgrid                : MonkhorstPack([10, 10, 10])
+    num.   red. kpoints  : 1000
+    num. irred. kpoints  : 56
+
+    Estimated memory usage (per MPI process):
+        nonlocal projectors  :   1.86GiB
+        single ψ             :    252MiB
+        single ρ             :   2.00MiB
+        peak memory (SCF)    :   2.41GiB
+    
+    Discretized Model(gga_x_pbe+gga_c_pbe, 3D):
+        lattice (in Bohr)    : [10.2612   , 0         , 0         ]
+                               [0         , 10.2612   , 0         ]
+                               [0         , 0         , 10.2612   ]
+        unit cell volume     : 1080.4 Bohr³
+    
+        atoms                : Si₈
+        atom potentials      : ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+                               ElementPsp(:Si, "/data/vebak3345/.julia/artifacts/897b9d17527039dd86ca882603c3af2ea0c0aada/Si.upf")
+    
+        num. electrons       : 32
+        spin polarization    : none
+        temperature          : 0 Ha
+    
+        terms                : Kinetic()
+                               AtomicLocal()
+                               AtomicNonlocal()
+                               Ewald(nothing)
+                               PspCorrection()
+                               Hartree()
+                               Xc(gga_x_pbe, gga_c_pbe)
+n     Energy            log10(ΔE)   log10(Δρ)   Diag   Δtime 
+---   ---------------   ---------   ---------   ----   ------
+  1   -33.83975582998                   -0.65    6.6    24.1s
+  2   -33.84836416537       -2.07       -1.48    1.1    9.84s
+  3   -33.84973717986       -2.86       -2.45    3.0    12.0s
+  4   -33.84981791253       -4.09       -3.17    3.8    14.4s
+  5   -33.84981909914       -5.93       -3.78    3.3    12.7s
+  6   -33.84981915735       -7.24       -4.58    3.2    12.2s
+  7   -33.84981916043       -8.51       -5.21    3.9    14.3s
+  8   -33.84981916053      -10.02       -5.90    3.3    12.6s
+  9   -33.84981916053      -11.34       -7.36    3.4    12.7s
+ 10   -33.84981916053      -12.92       -7.84    5.6    19.2s
+ 11   -33.84981916053      -13.67       -8.23    2.5    10.1s
+ 12   -33.84981916053   +  -13.85       -8.49    2.3    9.91s
+ 13   -33.84981916053   +  -14.15       -9.37    1.6    8.75s
+ 14   -33.84981916053      -14.15       -9.77    3.8    14.2s
+ 15   -33.84981916053   +  -14.15      -10.13    2.2    9.41s
+ 16   -33.84981916053   +    -Inf      -11.02    2.1    9.72s
+ 17   -33.84981916053   +    -Inf      -11.40    4.0    14.5s
+ 18   -33.84981916053      -14.15      -12.42    2.1    9.22s
+──────────────────────────────────────────────────────────────────────────────────────────────
+                                                     Time                    Allocations      
+                                            ───────────────────────   ────────────────────────
+             Tot / % measured:                    250s /  98.2%            129GiB /  99.2%    
+
+Section                             ncalls     time    %tot     avg     alloc    %tot      avg
+──────────────────────────────────────────────────────────────────────────────────────────────
+self_consistent_field                    1     231s   94.1%    231s    116GiB   90.5%   116GiB
+  LOBPCG                             1.01k     186s   75.7%   184ms   95.8GiB   74.8%  97.3MiB
+    DftHamiltonian multiplication    4.25k     134s   54.5%  31.5ms   8.84GiB    6.9%  2.13MiB
+      local                          61.9k    96.3s   39.3%  1.55ms   12.3MiB    0.0%     208B
+      nonlocal                       4.25k    36.0s   14.7%  8.47ms    479MiB    0.4%   116KiB
+    ortho! X vs Y                    5.47k    19.0s    7.7%  3.47ms   11.1GiB    8.7%  2.08MiB
+      ortho!                         12.1k    6.82s    2.8%   562μs    281MiB    0.2%  23.7KiB
+    rayleigh_ritz                    3.24k    9.42s    3.8%  2.91ms    334MiB    0.3%   106KiB
+    Update residuals                 4.25k    1.68s    0.7%   396μs   14.4GiB   11.2%  3.47MiB
+    preconditioning                  4.25k    1.58s    0.6%   373μs   1.91MiB    0.0%     473B
+    ortho!                           1.01k    1.17s    0.5%  1.16ms   29.9MiB    0.0%  30.4KiB
+  compute_density                       18    24.3s    9.9%   1.35s    517MiB    0.4%  28.7MiB
+    symmetrize_ρ                        18    11.9s    4.9%   662ms    396MiB    0.3%  22.0MiB
+  energy_hamiltonian                    19    9.76s    4.0%   514ms   8.42GiB    6.6%   454MiB
+    ene_ops                             19    9.19s    3.8%   484ms   4.18GiB    3.3%   225MiB
+      ene_ops: nonlocal                 19    5.30s    2.2%   279ms    169MiB    0.1%  8.92MiB
+      ene_ops: xc                       19    3.24s    1.3%   171ms   3.55GiB    2.8%   191MiB
+      ene_ops: kinetic                  19    234ms    0.1%  12.3ms   3.42MiB    0.0%   184KiB
+      ene_ops: hartree                  19   70.6ms    0.0%  3.72ms    381MiB    0.3%  20.0MiB
+      ene_ops: local                    19   6.55ms    0.0%   345μs   76.8MiB    0.1%  4.04MiB
+  energy                                18    6.77s    2.8%   376ms   3.84GiB    3.0%   218MiB
+    ene_ops: nonlocal                   18    5.30s    2.2%   294ms    169MiB    0.1%  9.42MiB
+    ene_ops: xc                         18    848ms    0.3%  47.1ms   3.24GiB    2.5%   184MiB
+    ene_ops: kinetic                    18    236ms    0.1%  13.1ms   3.29MiB    0.0%   187KiB
+    ene_ops: hartree                    18   57.3ms    0.0%  3.18ms    361MiB    0.3%  20.0MiB
+    ene_ops: local                      18   4.67ms    0.0%   260μs   72.7MiB    0.1%  4.04MiB
+  Anderson acceleration                 17    553ms    0.2%  32.5ms    629MiB    0.5%  37.0MiB
+  ortho_qr                              56    299ms    0.1%  5.34ms    507MiB    0.4%  9.05MiB
+  χ0Mixing                              18   53.0ms    0.0%  2.94ms   3.60MiB    0.0%   205KiB
+save_scfres                              2    10.4s    4.2%   5.20s   8.81GiB    6.9%  4.41GiB
+PlaneWaveBasis                           1    4.12s    1.7%   4.12s   3.40GiB    2.7%  3.40GiB
+  Instantiation AtomicNonlocal           1    2.88s    1.2%   2.88s   2.80GiB    2.2%  2.80GiB
+  build_kpoints                          1    442ms    0.2%   442ms    422MiB    0.3%   422MiB
+  Instantiation Xc                       1    137ms    0.1%   137ms   56.7MiB    0.0%  56.7MiB
+    enforce_real!                        1   1.28ms    0.0%  1.28ms      384B    0.0%     384B
+  Instantiation AtomicLocal              1    117ms    0.0%   117ms   38.5MiB    0.0%  38.5MiB
+    enforce_real!                        1   1.28ms    0.0%  1.28ms      384B    0.0%     384B
+  Instantiation Kinetic                  1   9.18ms    0.0%  9.18ms   46.6MiB    0.0%  46.6MiB
+  Instantiation Ewald                    1   4.69ms    0.0%  4.69ms   5.30KiB    0.0%  5.30KiB
+    precomp: Ewald                       1   4.64ms    0.0%  4.64ms   3.16KiB    0.0%  3.16KiB
+  Instantiation PspCorrection            1   3.88ms    0.0%  3.88ms   3.98KiB    0.0%  3.98KiB
+  Instantiation Hartree                  1   2.55ms    0.0%  2.55ms   4.00MiB    0.0%  4.00MiB
+    enforce_real!                        1   1.21ms    0.0%  1.21ms      432B    0.0%     432B
+  _check_kpoint_reduction                1   2.52ms    0.0%  2.52ms     0.00B    0.0%    0.00B
+symmetry_operations                      1   33.9ms    0.0%  33.9ms   8.45MiB    0.0%  8.45MiB
+  _check_symmetries                      1   98.7μs    0.0%  98.7μs    192KiB    0.0%   192KiB
+enforce_real!                            1   1.29ms    0.0%  1.29ms      384B    0.0%     384B
+──────────────────────────────────────────────────────────────────────────────────────────────
