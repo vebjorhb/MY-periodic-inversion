@@ -1,0 +1,7 @@
+["pd_nc_sr_pbe_standard_0.4.1_upf"]
+git-tree-sha1 = "897b9d17527039dd86ca882603c3af2ea0c0aada"
+lazy = true
+
+    [["pd_nc_sr_pbe_standard_0.4.1_upf".download]]
+    sha256 = "1ee2aec5d651012557ebcfcd33d7a3192e4789b1c49af1bd846a6f7c6a032f84"
+    url = "https://github.com/JuliaMolSim/PseudoLibrary/raw/main/artifacts/pd_nc_sr_pbe_standard_0.4.1_upf.tar.gz"
