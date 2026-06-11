@@ -1,5 +1,5 @@
 include("inversion.jl")
-reference = "reference_gaas_Ecut_83_kgrid_17.jld2"
+reference = "results/reference_gaas_Ecut_83_kgrid_17.jld2"
 prefix, _ = splitext(@__FILE__)
 εs = exp10.(0:-0.125:-7)
 run_exact_inversion(prefix, reference; verbose=true,
